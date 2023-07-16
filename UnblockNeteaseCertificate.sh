@@ -9,7 +9,7 @@ caKey="$basepath/ca.key"
 # 生成 CA 私钥
 openssl genrsa -out "${caKey}" 2048
 # 生成 CA 证书
-openssl req -x509 -new -nodes -key "${caKey}" -sha256 -days 825 -out "${caCrt}" -subj "/C=CN/CN=JieSuoWangYiYunYinYue Root CA/O=UnblockNeteaseMusic"
+openssl req -x509 -new -nodes -key "${caKey}" -sha256 -days 1825 -out "${caCrt}" -subj "/C=CN/CN=JieSuoWangYiYunYinYue Root CA/O=UnblockNeteaseMusic"
 # 生成服务器私钥
 openssl genrsa -out "${serverKey}" 2048
 # 生成证书签发请求
@@ -20,5 +20,5 @@ echo "basicConstraints=CA:FALSE
 keyUsage=digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
 extendedKeyUsage=serverAuth
 subjectAltName=DNS:music.163.com,DNS:*.music.163.com" >"${extFile}"
-openssl x509 -req -extfile "${extFile}" -days 825 -in "${serverCsr}" -CA "${caCrt}" -CAkey "${caKey}" -CAcreateserial -out "${serverCrt}"
+openssl x509 -req -extfile "${extFile}" -days 1825 -in "${serverCsr}" -CA "${caCrt}" -CAkey "${caKey}" -CAcreateserial -out "${serverCrt}"
 rm -f "${extFile}"
