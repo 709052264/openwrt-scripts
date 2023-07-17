@@ -9,7 +9,7 @@ opkg install wireguard-tools
  
 # Configuration parameters
 WG_IF="wg0"
-WG_PORT="51236"
+WG_PORT="52536"
 WG_ADDR="192.168.9.1/24"
 
 # Generate and exchange the keys
