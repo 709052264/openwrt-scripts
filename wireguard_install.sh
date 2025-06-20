@@ -5,7 +5,7 @@ opkg update
 
 #The package name has changed
 #opkg install wireguard
-opkg install wireguard-tools
+opkg install kmod-wireguard
 opkg install qrencode
  
 # Configuration parameters
