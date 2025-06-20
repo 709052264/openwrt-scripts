@@ -6,6 +6,7 @@ opkg update
 #The package name has changed
 #opkg install wireguard
 opkg install wireguard-tools
+opkg install qrencode
  
 # Configuration parameters
 WG_IF="wg0"
